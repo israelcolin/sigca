@@ -1,0 +1,25 @@
+{
+  "name": "sigca-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "API backend del Sistema Integral de Gestión Catequética.",
+  "type": "module",
+  "main": "backend/dist/server.js",
+  "scripts": {
+    "dev": "tsx watch backend/src/server.ts",
+    "build": "tsc --project backend/tsconfig.json",
+    "start": "node backend/dist/server.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}
