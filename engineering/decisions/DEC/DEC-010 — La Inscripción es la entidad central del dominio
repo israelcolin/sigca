@@ -1,0 +1,21 @@
+Estado: Aprobada
+
+Justificación
+
+Durante el levantamiento de requerimientos se identificó que la información permanente del Alumno debe permanecer independiente de la operación anual.
+
+La participación del Alumno en cada ciclo se representa mediante una Inscripción, la cual concentra:
+
+Grupo
+Libro
+Ciclo
+Tutor
+Credencial
+Evaluaciones
+Asistencias
+Certificados
+Consecuencias
+El historial del Alumno permanece intacto.
+Se simplifica la reinscripción.
+Se conserva la trazabilidad entre ciclos.
+La base de datos evita duplicar información personal.

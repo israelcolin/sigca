@@ -1,0 +1,13 @@
+Estado: Aprobada
+
+Justificación
+
+El Código QR representa la identidad permanente del Alumno y no la inscripción anual.
+
+Al escanear el QR, el sistema localizará automáticamente la inscripción activa correspondiente al ciclo vigente.
+
+Consecuencias
+El QR nunca cambia.
+La reimpresión de credenciales reutiliza el mismo código.
+Se evita emitir nuevos identificadores cada año.
+El historial permanece vinculado a una única identidad.

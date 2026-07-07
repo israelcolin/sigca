@@ -1,0 +1,13 @@
+Estado: Aprobada
+
+Justificación
+
+Las clases, misas, retiros, pláticas y futuras actividades comparten el mismo proceso de registro de asistencia.
+
+En lugar de crear módulos independientes, todas ellas se modelan como Eventos.
+
+Consecuencias
+Un único mecanismo de asistencias.
+Mayor flexibilidad para agregar nuevos tipos de actividades.
+Menor complejidad en el backend.
+Reportes unificados.
