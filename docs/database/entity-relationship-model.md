@@ -90,6 +90,12 @@ Usuario
     │
     ├───────────────< N Eventos registrados
     └───────────────< N Modificaciones
+
+Usuario
+    │
+    ├───────────────< 1 Rol
+    └───────────────< 1 Perfil
+
 ```
 
 ---
