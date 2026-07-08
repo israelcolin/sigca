@@ -62,6 +62,9 @@ Sacramentos   Código QR
                      ▼
                   Evento
                      │
+                     ▼                     
+                Sesión de Evento
+                     │
                      ▼
                  Asistencia
                      │
@@ -270,6 +273,27 @@ Tipos previstos:
 * Actividad Especial
 
 El uso de una única entidad para todos los eventos simplifica la operación y permite ampliar el sistema sin modificar el modelo principal.
+
+---
+
+## Sesión de Evento
+
+Responsabilidad
+
+Representar la realización concreta de un Evento.
+
+Atributos conceptuales
+
+Fecha
+Hora de inicio
+Hora de fin
+Estado
+Observaciones
+
+Relaciones
+
+Pertenece a un Evento.
+Tiene muchas Asistencias.
 
 ---
 

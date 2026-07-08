@@ -323,6 +323,30 @@ Los Eventos podrán requerir control de asistencia.
 
 ---
 
+## EV-004
+
+Todo Evento podrá generar una o más Sesiones de Evento.
+
+---
+
+## EV-005
+
+Las asistencias siempre se registrarán sobre una Sesión de Evento.
+
+---
+
+## EV-006
+
+Una Sesión de Evento podrá cancelarse o reprogramarse sin modificar el Evento original.
+
+---
+
+## EV-007
+
+El sistema permitirá generar automáticamente las Sesiones de Evento a partir de la configuración del Evento.
+
+---
+
 # Asistencias
 
 ## ATT-001

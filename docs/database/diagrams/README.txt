@@ -1,0 +1,1 @@
+Diagrama inicial. Se actualizará tras SPEC-006 con el modelo físico definitivo.

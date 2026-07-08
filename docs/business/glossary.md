@@ -111,6 +111,20 @@ Ejemplos:
 
 Todos los eventos utilizan el mismo mecanismo de registro de asistencia.
 
+## Sesión de Evento
+
+Representa una ocurrencia específica de un Evento planificado.
+
+Ejemplos:
+
+- Clase del Libro 1 del miércoles 10 de septiembre.
+- Misa dominical del 15 de noviembre a las 10:00.
+- Retiro de Adviento del 6 de diciembre.
+
+Una Sesión de Evento tiene una fecha, una hora, un estado y constituye la unidad sobre la cual se registran las asistencias.
+
+Un Evento puede generar una o muchas Sesiones de Evento.
+
 ---
 
 # G

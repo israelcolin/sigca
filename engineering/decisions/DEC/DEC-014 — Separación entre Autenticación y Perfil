@@ -1,0 +1,7 @@
+ustificación
+
+La autenticación es responsabilidad de Supabase Auth.
+
+La información personal es responsabilidad de SIGCA.
+
+El sistema nunca dependerá de la estructura interna de auth.users.

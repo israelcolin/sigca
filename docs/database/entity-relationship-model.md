@@ -80,7 +80,11 @@ Inscripción
 
 Evento
     │
-    └───────────────< N Asistencias
+    └───────< N SesionEvento
+
+SesionEvento
+    │
+    └───────< N Asistencia
 
 Usuario
     │

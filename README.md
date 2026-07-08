@@ -1,31 +1,98 @@
 # SIGCA
 
-Sistema Integral de Gestión Catequética
+## Sistema Integral de Gestión Catequética
 
-## Estado
+SIGCA es una plataforma para la administración integral de procesos catequéticos parroquiales.
 
-🚧 En desarrollo
+Su objetivo es gestionar la operación completa de la catequesis, incluyendo alumnos, tutores, ciclos, grupos, catequistas, asistencias, eventos, evaluaciones, credenciales y certificaciones.
+
+---
+
+## Estado del Proyecto
+
+**Versión actual:** `v0.1.0-alpha`
+
+**Estado:** En desarrollo activo.
+
+### Fases completadas
+
+* Ingeniería del proyecto.
+* Arquitectura base.
+* Backend inicial.
+* Integración con Supabase.
+* Análisis funcional del dominio.
+* Modelo conceptual de datos.
+
+### Próxima fase
+
+Diseño físico de la base de datos y generación de migraciones para PostgreSQL/Supabase.
+
+---
 
 ## Tecnologías
 
-- Node.js
-- TypeScript
-- Express
-- Supabase
-- MaterializeCSS (Frontend)
+### Backend
+
+* Node.js
+* TypeScript
+* Express
+
+### Base de Datos
+
+* PostgreSQL
+* Supabase
+
+### Frontend (Planeado)
+
+* Materialize CSS
+
+---
 
 ## Arquitectura
 
-Feature First
+El proyecto utiliza una arquitectura **Feature First**, complementada con documentación basada en:
+
+* ADR (Architecture Decision Records)
+* DEC (Design Decisions)
+* SPEC (Implementation Specifications)
+* BRQ (Business Requirements Questionnaire)
+
+---
 
 ## Documentación
 
-Toda la documentación técnica se encuentra en la carpeta `engineering`.
+La documentación del proyecto se encuentra organizada de la siguiente manera:
 
-## Configuración local
+```text
+docs/
+├── architecture/
+├── business/
+├── database/
+└── decisions/
 
-El backend centraliza la configuración de entorno en [backend/src/core/config/env.ts](backend/src/core/config/env.ts). Se recomienda copiar [backend/.env.example](backend/.env.example) a [backend/.env.development](backend/.env.development) y completar las variables de Supabase antes de iniciar el servidor.
+engineering/
+├── decisions/
+├── journal/
+├── procedures/
+├── specs/
+└── standards/
+```
 
-## Licencia
+---
 
-Pendiente.
+## Principios de Diseño
+
+* El dominio guía el desarrollo.
+* Conservación completa del historial.
+* Separación entre información permanente y operación anual.
+* Escalabilidad para múltiples parroquias.
+* Auditoría de operaciones.
+* Código desacoplado y documentado.
+
+---
+
+## Estado Actual
+
+El análisis funcional y el modelo conceptual del dominio se encuentran aprobados.
+
+El siguiente hito será el diseño físico de la base de datos y la implementación del esquema inicial en Supabase.

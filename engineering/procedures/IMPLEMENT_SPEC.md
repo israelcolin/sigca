@@ -6,6 +6,24 @@ Este documento define el procedimiento estándar para implementar cualquier SPEC
 
 Todas las implementaciones deberán seguir estas instrucciones.
 
+## Fuentes de Verdad
+
+Antes de implementar cualquier entregable, se deberá revisar la documentación relacionada.
+
+Orden de prioridad:
+
+1. SPEC correspondiente.
+2. ADR relacionadas.
+3. DEC relacionadas.
+4. Business Rules.
+5. Domain Model.
+6. Entity Relationship Model.
+7. Naming Conventions.
+8. PROJECT_DECISIONS.md.
+9. PROJECT_ROADMAP.md.
+
+Si existe alguna contradicción entre documentos, no asumir una solución; reportarla al final de la implementación.
+
 ---
 
 # Procedimiento
@@ -29,6 +47,19 @@ Todas las implementaciones deberán seguir estas instrucciones.
 9. No agregar dependencias que no hayan sido solicitadas explícitamente.
 
 10. Mantener el código limpio, documentado y consistente con los estándares del proyecto.
+
+---
+
+## Implementaciones SQL
+
+Cuando la SPEC genere scripts SQL:
+
+- Respetar Naming Conventions.
+- Utilizar PostgreSQL compatible con Supabase.
+- No inventar tablas ni columnas.
+- No modificar el modelo físico.
+- Implementar únicamente el alcance de la SPEC.
+- Dividir las migraciones según el plan definido.
 
 ---
 

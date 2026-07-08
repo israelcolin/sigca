@@ -1,0 +1,12 @@
+ustificación
+
+Un Evento representa una actividad planificada (por ejemplo, "Clase de Libro 1" o "Misa Dominical de las 10:00"), mientras que una Sesión de Evento representa una ocurrencia concreta en una fecha y hora determinadas.
+
+Consecuencias
+
+Se pueden programar automáticamente todas las sesiones de un ciclo.
+Se pueden cancelar o reprogramar sesiones individuales.
+La asistencia se registra sobre la sesión, no sobre la plantilla del evento.
+Se obtienen estadísticas mucho más precisas.
+
+Con esto mantenemos la trazabilidad de la evolución del modelo.

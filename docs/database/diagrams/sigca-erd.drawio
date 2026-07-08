@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="SIGCA ERD">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="parroquia" value="PARROQUIA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ciclo" value="CICLO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="grupo" value="GRUPO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="evento" value="EVENTO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="sesion" value="SESION_EVENTO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="840" y="40" width="170" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="asistencia" value="ASISTENCIA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="40" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="parroquia" target="ciclo"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="ciclo" target="grupo"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="grupo" target="evento"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="evento" target="sesion"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="sesion" target="asistencia"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

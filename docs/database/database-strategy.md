@@ -295,6 +295,17 @@ Las políticas de acceso serán administradas mediante Row Level Security (RLS) 
 
 Las reglas de autorización del negocio se implementarán en el backend y se complementarán con RLS para proteger el acceso directo a la base de datos.
 
+
+La autenticación será responsabilidad de Supabase Auth.
+
+La información propia de los operadores del sistema se almacenará en las tablas:
+
+- usuario
+- perfil
+- usuario_rol
+
+De esta manera el sistema permanece desacoplado de la estructura interna de auth.users.
+
 ---
 
 # Rendimiento
