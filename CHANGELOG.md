@@ -43,3 +43,22 @@ El formato está inspirado en *Keep a Changelog* y el proyecto utiliza Versionad
 Concluida la fase de Ingeniería y Análisis del Dominio.
 
 El proyecto queda listo para iniciar el diseño físico de la base de datos y el desarrollo de los primeros módulos funcionales.
+
+## [Unreleased]
+
+## 2026-07-08
+
+### Added
+- Se completó el modelo físico de la base de datos de SIGCA.
+- Implementadas las migraciones:
+  - 003_create_organization.sql
+  - 004_create_catechesis.sql
+  - 005_create_events.sql
+  - 006_create_academic.sql
+- Se creó la estructura `backend/database/seeds/`.
+- Se implementó `001_seed_catalogs.sql` con los catálogos base del sistema.
+
+### Changed
+- Se estandarizó la estrategia de Seeds y Fixtures.
+- Se actualizó `IMPLEMENT_SPEC.md` con las reglas para implementación de Seeds.
+- Se congeló el modelo de dominio para iniciar la fase de desarrollo.

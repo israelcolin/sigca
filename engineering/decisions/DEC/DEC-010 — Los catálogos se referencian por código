@@ -1,0 +1,23 @@
+Decisión
+
+El backend utilizará siempre el campo codigo para reglas de negocio.
+El frontend mostrará el campo nombre.
+descripcion será exclusivamente documental.
+orden definirá el orden de presentación.
+
+Ejemplo
+
+codigo	nombre
+ADMIN	Administrador
+COORD_GENERAL	Coordinador General
+CATEQUISTA	Catequista
+
+Nunca haremos lógica del tipo:
+
+if (rol.nombre === 'Administrador')
+
+Siempre será:
+
+if (rol.codigo === 'ADMIN')
+
+Creo que esta decisión hará que SIGCA sea mucho más fácil de mantener.
