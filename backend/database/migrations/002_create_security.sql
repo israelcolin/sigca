@@ -69,6 +69,6 @@ COMMENT ON COLUMN usuario_rol.id IS 'Identificador único de la asignación';
 COMMENT ON COLUMN usuario_rol.usuario_id IS 'Referencia al usuario';
 COMMENT ON COLUMN usuario_rol.rol_id IS 'Referencia al rol asignado';
 COMMENT ON COLUMN usuario_rol.created_at IS 'Fecha de creación del registro';
-COMMENT ON COLUMN usuario_rol.updated_at IS 'Fecha de última modificación del registro';
+COMMENT ON COLUMN usuario_rol.upd   ated_at IS 'Fecha de última modificación del registro';
 
 COMMIT;

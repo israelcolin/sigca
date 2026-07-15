@@ -62,3 +62,37 @@ El proyecto queda listo para iniciar el diseño físico de la base de datos y el
 - Se estandarizó la estrategia de Seeds y Fixtures.
 - Se actualizó `IMPLEMENT_SPEC.md` con las reglas para implementación de Seeds.
 - Se congeló el modelo de dominio para iniciar la fase de desarrollo.
+
+## [0.4.0] - 2026-07-15
+
+### Added
+
+#### Database
+- Se completó la plataforma de datos de SIGCA.
+- Implementadas las migraciones:
+  - 007_create_indexes.sql
+  - 008_create_views.sql
+  - 009_create_functions.sql
+  - 010_create_rls.sql
+
+#### Seeds
+- Implementado 001_seed_catalogs.sql con los catálogos base del sistema.
+
+#### Security
+- Se habilitó Row Level Security (RLS) para las tablas del sistema.
+- Se implementaron las políticas iniciales compatibles con Supabase.
+
+### Changed
+
+- Se formalizó la estructura:
+  - migrations/
+  - seeds/
+  - fixtures/
+
+- Se actualizó IMPLEMENT_SPEC.md para soportar Seeds.
+
+### Completed
+
+- Plataforma de Base de Datos concluida.
+- Modelo de dominio congelado.
+- Inicio de preparación para Backend.

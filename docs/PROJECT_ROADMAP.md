@@ -370,3 +370,22 @@ Objetivos
 M3 - Diseño Técnico de la Base de Datos.
 
 Este Milestone marcará el inicio del diseño físico de PostgreSQL y preparará el proyecto para la implementación de los primeros módulos funcionales.
+
+## Fase 3 - Plataforma de Datos
+
+Estado: ✅ COMPLETADA
+
+Entregables
+
+- Modelo lógico
+- Modelo físico
+- Migraciones
+- Seeds
+- Índices
+- Views
+- Functions
+- RLS
+
+Resultado
+
+Base de datos lista para iniciar el desarrollo del Backend.

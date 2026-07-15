@@ -1,0 +1,27 @@
+# DEC-010
+
+## Título
+
+Congelamiento de la Plataforma de Datos
+
+## Estado
+
+Aceptada
+
+## Contexto
+
+Después de implementar y validar las migraciones, índices, vistas, funciones y políticas RLS, la plataforma de datos alcanzó un estado estable.
+
+## Decisión
+
+A partir de la versión 0.4.0:
+
+- El modelo de dominio queda congelado.
+- Las entidades existentes no serán modificadas salvo por defectos críticos.
+- Las nuevas funcionalidades deberán construirse sobre el modelo existente.
+
+## Consecuencias
+
+- Se reduce el riesgo de retrabajo.
+- La API REST puede desarrollarse sobre una base estable.
+- Las siguientes iteraciones se enfocarán en funcionalidad.

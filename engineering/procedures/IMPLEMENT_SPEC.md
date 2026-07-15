@@ -63,6 +63,28 @@ Cuando la SPEC genere scripts SQL:
 
 ---
 
+## Implementación de Seeds
+
+Toda migración podrá tener un archivo de seed con la misma numeración y el mismo nombre del dominio.
+
+Ejemplos:
+
+001_create_catalogs.sql
+001_seed_catalogs.sql
+
+005_create_events.sql
+005_seed_events.sql
+
+Reglas:
+
+- Los seeds contienen únicamente datos requeridos para el funcionamiento inicial del sistema.
+- Los seeds nunca deben contener datos de prueba.
+- Los datos de prueba deberán almacenarse en la carpeta backend/database/fixtures.
+- Un seed sólo se implementará cuando aporte datos obligatorios para una instalación nueva de SIGCA.
+- Si una migración no requiere datos iniciales, no se creará un archivo seed.
+
+---
+
 # Durante la implementación
 
 - Mantener el principio de responsabilidad única (SRP).

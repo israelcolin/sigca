@@ -1,6 +1,3 @@
-import { env } from './env.js';
-import { systemName, systemVersion } from '../version/version.js';
-
 export interface AppConfig {
   nodeEnv: string;
   port: string;
@@ -9,13 +6,15 @@ export interface AppConfig {
   systemVersion: string;
 }
 
+const env = process.env;
+
 /**
  * Configuración centralizada del backend.
  */
 export const config: AppConfig = {
-  nodeEnv: env.server.environment,
-  port: env.server.port,
+  nodeEnv: env.NODE_ENV ?? 'development',
+  port: env.PORT ?? '3000',
   apiVersion: 'v1',
-  systemName: env.app.name || systemName,
-  systemVersion: env.app.version || systemVersion,
+  systemName: env.APP_NAME ?? 'SIGCA',
+  systemVersion: env.APP_VERSION ?? '0.1.0',
 };
