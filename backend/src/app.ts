@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { errorHandler } from './core/middleware/error-handler.js';
+import { errorHandler } from './core/middlewares/error-handler.js';
 import { healthRoutes } from './core/modules/health/index.js';
 import { welcomeRoutes } from './core/modules/welcome/index.js';
 
