@@ -1,0 +1,38 @@
+# DEC-017
+
+## Estado
+
+Aceptada
+
+## Título
+
+Preferencia por la simplicidad arquitectónica
+
+## Contexto
+
+Durante el diseño de SIGCA se evaluaron diversas alternativas tecnológicas y patrones de arquitectura.
+
+Aunque existen frameworks y herramientas que ofrecen un gran número de funcionalidades, también incrementan la complejidad del proyecto, la curva de aprendizaje y el costo de mantenimiento.
+
+Dado que SIGCA es un proyecto con un único desarrollador y una visión de largo plazo, se decidió privilegiar una arquitectura sencilla, bien documentada y fácilmente comprensible.
+
+## Decisión
+
+En SIGCA toda incorporación de nuevas tecnologías deberá responder a una necesidad real del proyecto.
+
+No se adoptarán herramientas únicamente por tendencias del mercado o popularidad.
+
+Cada dependencia deberá justificar claramente el beneficio que aporta en términos de:
+
+- simplicidad,
+- mantenibilidad,
+- productividad,
+- escalabilidad.
+
+## Consecuencias
+
+- Menor deuda técnica.
+- Mayor facilidad para incorporar nuevos desarrolladores.
+- Menor riesgo de obsolescencia.
+- Arquitectura más estable.
+- Mayor vida útil del proyecto.

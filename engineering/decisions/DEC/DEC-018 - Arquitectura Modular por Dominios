@@ -1,0 +1,37 @@
+# DEC-012
+
+## Estado
+
+Aceptada
+
+## Título
+
+Arquitectura Modular por Dominios
+
+## Contexto
+
+Inicialmente se planteó organizar el Backend mediante carpetas técnicas:
+
+- controllers
+- services
+- repositories
+- validators
+- dto
+
+Aunque este enfoque funciona correctamente en proyectos pequeños, conforme el número de módulos crece la navegación se vuelve compleja, ya que una misma funcionalidad queda distribuida en múltiples directorios.
+
+## Decisión
+
+SIGCA organizará el Backend mediante módulos funcionales.
+
+Cada módulo contendrá todos los elementos necesarios para implementar su funcionalidad.
+
+Las capas arquitectónicas continuarán existiendo, pero estarán encapsuladas dentro de cada módulo.
+
+## Consecuencias
+
+- Mayor cohesión.
+- Menor acoplamiento.
+- Navegación más sencilla.
+- Mayor facilidad para incorporar nuevos módulos.
+- Facilita futuras extracciones hacia microservicios si algún día fueran necesarias.
