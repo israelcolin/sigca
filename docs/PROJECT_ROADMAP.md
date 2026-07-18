@@ -53,8 +53,8 @@ Descubrimiento del Dominio
 
 FASE 3
 Diseño Técnico
-░░░░░░░░░░
-0%
+██████████
+100%
 
 ↓
 

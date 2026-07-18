@@ -1,3 +1,4 @@
+import { createClient } from '@supabase/supabase-js';
 import type { DatabaseClient } from './client.js';
 
 export interface SupabaseClientConfig {
@@ -15,9 +16,9 @@ export function getSupabaseClient(config: SupabaseClientConfig): DatabaseClient 
     return cachedClient;
   }
 
-  cachedClient = {
-    type: 'supabase',
-  };
+  cachedClient = Object.assign(createClient(config.url, config.anonKey), {
+    type: 'supabase' as const,
+  });
 
   return cachedClient;
 }

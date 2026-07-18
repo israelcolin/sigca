@@ -96,3 +96,19 @@ El proyecto queda listo para iniciar el diseño físico de la base de datos y el
 - Plataforma de Base de Datos concluida.
 - Modelo de dominio congelado.
 - Inicio de preparación para Backend.
+
+## [0.2.0] - 2026-07-16
+
+### Added
+
+- Arquitectura modular Backend
+- Arquitectura Frontend
+- Implementación completa de PostgreSQL
+- Migraciones 001-010
+- Seed inicial de catálogos
+- Índices de optimización
+- Vistas SQL
+- Funciones SQL
+- Row Level Security
+- Congelamiento de la arquitectura base
+- Inicio de SPEC-008

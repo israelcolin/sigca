@@ -1,0 +1,20 @@
+Nueva SPEC
+        │
+        ▼
+Revisión de contexto (VSCode → CHAT)
+        │
+        ▼
+Validación contra ADR / DEC / SPEC
+        │
+        ▼
+¿Existe alguna decisión arquitectónica no documentada?
+        │
+   ┌────┴────┐
+   │         │
+  No        Sí
+   │         │
+   ▼         ▼
+Implementar  Crear DEC
+             │
+             ▼
+         Implementar

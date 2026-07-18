@@ -20,6 +20,6 @@
     "sourceMap": true,
     "noEmitOnError": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "tests/health.test.ts"],
   "exclude": ["dist", "node_modules"]
 }

@@ -1,0 +1,30 @@
+# DEC-019
+
+## Estado
+
+Aceptada
+
+## Título
+
+Congelamiento de la Arquitectura Base
+
+## Contexto
+
+Durante las fases iniciales del proyecto se realizaron diversos ajustes estructurales para encontrar la organización más adecuada del código.
+
+Una vez concluida la definición de la arquitectura modular, la estructura del proyecto se considera estable.
+
+## Decisión
+
+A partir de este momento la organización de carpetas de SIGCA queda congelada.
+
+Las nuevas funcionalidades deberán integrarse respetando esta estructura.
+
+Cualquier modificación estructural deberá justificarse mediante una nueva Decision Record (DEC).
+
+## Consecuencias
+
+- Estabilidad del proyecto.
+- Documentación consistente.
+- Menor riesgo durante el desarrollo.
+- Mayor facilidad para incorporar nuevos módulos.

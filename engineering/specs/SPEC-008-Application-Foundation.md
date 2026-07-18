@@ -1,19 +1,16 @@
 # SPEC-008
-# Backend Foundation & Application Architecture
 
-| Campo | Valor |
-|-------|-------|
-| **Identificador** | SPEC-008 |
-| **Nombre** | Backend Foundation & Application Architecture |
-| **Versión** | 1.0 |
-| **Estado** | 🟡 En Desarrollo |
-| **Prioridad** | Alta |
-| **Autor** | Eduardo Sánchez |
-| **Arquitectura** | Clean Architecture |
-| **Fecha de creación** | 2026-07-16 |
-| **Dependencias** | SPEC-001 a SPEC-007 |
+# Application Foundation
 
----
+## Estado
+En progreso
+
+## Objetivo
+
+Definir la arquitectura base, organización, principios,
+configuración, navegación, layout, frontend, backend y
+convenciones que servirán como fundamento para el desarrollo
+de SIGCA.
 
 # 1. Introducción
 
@@ -924,7 +921,7 @@ Tema Material UI.
 Estilos globales.
 
 ---
-
+DEC-012 
 ### types
 
 Interfaces compartidas.
