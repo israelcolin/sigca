@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 
-import { config } from '../../config/config.js';
+import { config } from '../../core/config/config.js';
 import { buildWelcomePage } from './welcome.service.js';
 
 /**

@@ -1,7 +1,7 @@
 import app from './app.js';
 import { config } from './core/config/config.js';
 import { logger } from './core/logger/logger.js';
-import { buildStartupBanner } from './core/modules/welcome/welcome.service.js';
+import { buildStartupBanner } from './modules/welcome/welcome.service.js';
 
 /**
  * Puerto HTTP configurado para el proceso.

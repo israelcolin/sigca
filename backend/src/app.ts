@@ -1,8 +1,9 @@
 import express from 'express';
 
 import { errorHandler } from './core/middlewares/error-handler.js';
-import { healthRoutes } from './core/modules/health/index.js';
-import { welcomeRoutes } from './core/modules/welcome/index.js';
+import { authRoutes } from './modules/auth/index.js';
+import { healthRoutes } from './modules/health/index.js';
+import { welcomeRoutes } from './modules/welcome/index.js';
 
 /**
  * Aplicación HTTP de SIGCA.
@@ -20,6 +21,7 @@ app.use(express.json({ limit: '100kb' }));
 
 app.use('/', welcomeRoutes);
 app.use('/api/v1', healthRoutes);
+app.use('/api/v1/auth', authRoutes);
 app.use(errorHandler);
 
 export default app;

@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 
-import { createSuccessResponse } from '../../responses/api-response.js';
+import { createSuccessResponse } from '../../shared/responses/api-response.js';
 import { getHealthPayload } from './health.service.js';
 
 /**

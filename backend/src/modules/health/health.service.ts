@@ -1,8 +1,8 @@
 /**
  * Servicio de salud del sistema.
  */
-import { config } from '../../config/config.js';
-import { getSystemMetadata } from '../../version/version.js';
+import { config } from '../../core/config/config.js';
+import { getSystemMetadata } from '../../core/version/version.js';
 
 export interface HealthPayload {
   system: string;

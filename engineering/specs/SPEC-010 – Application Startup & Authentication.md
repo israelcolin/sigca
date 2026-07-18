@@ -372,4 +372,201 @@ Al finalizar este SPEC deberán existir, como mínimo:
 
 ---
 
+---
+
+# Plan de Implementación
+
+El desarrollo de este SPEC se realizará mediante iteraciones incrementales. Cada iteración deberá concluir con:
+
+- Implementación completa.
+- Revisión técnica.
+- Commit.
+- Tag.
+- Actualización del CHANGELOG cuando aplique.
+
+No podrá iniciarse la siguiente iteración hasta que la actual se encuentre aprobada.
+
+---
+
+## Iteración 10.1 – Cliente de Supabase
+
+### Objetivo
+
+Reemplazar el cliente temporal (stub) por el cliente oficial de Supabase reutilizando la infraestructura creada en SPEC-004.
+
+### Alcance
+
+- Implementar el cliente oficial utilizando `@supabase/supabase-js`.
+- Mantener el patrón Singleton.
+- Mantener la API pública existente.
+- No modificar la arquitectura del Core.
+
+### Archivos involucrados
+
+- `backend/src/core/database/supabase-client.ts`
+
+### Criterios de aceptación
+
+- Cliente oficial implementado.
+- Singleton conservado.
+- API pública sin cambios.
+- Revisión técnica aprobada.
+
+### Estado
+
+✅ Completada
+
+---
+
+## Iteración 10.2 – Fundación del módulo Auth
+
+### Objetivo
+
+Integrar el módulo `auth` con la arquitectura del backend y dejar preparada la estructura para la autenticación.
+
+### Alcance
+
+- Registrar el módulo dentro de la aplicación.
+- Implementar:
+  - `auth.routes.ts`
+  - `auth.controller.ts`
+  - `auth.service.ts`
+  - `index.ts`
+- Exponer el endpoint:
+
+```
+POST /api/v1/auth/login
+```
+
+Durante esta iteración el endpoint podrá responder temporalmente:
+
+```json
+{
+  "success": false,
+  "message": "Not implemented"
+}
+```
+
+El objetivo es validar el flujo completo:
+
+```
+HTTP Request
+        ↓
+Routes
+        ↓
+Controller
+        ↓
+Service
+        ↓
+Respuesta HTTP
+```
+
+No deberá implementarse todavía lógica de autenticación.
+
+### Archivos involucrados
+
+```
+backend/src/modules/auth/
+```
+
+### Criterios de aceptación
+
+- El módulo queda registrado.
+- El endpoint responde correctamente.
+- Controller y Service están conectados.
+- No existe lógica duplicada.
+- Se respetan ADR, DEC y SPEC-004.
+
+### Estado
+
+⏳ Pendiente
+
+---
+
+## Iteración 10.3 – Login
+
+### Objetivo
+
+Implementar el inicio de sesión utilizando Supabase Auth.
+
+### Alcance
+
+- Validación de credenciales.
+- Integración con Supabase Auth.
+- Manejo de errores.
+- Respuesta estándar.
+
+### Estado
+
+⏳ Pendiente
+
+---
+
+## Iteración 10.4 – Logout
+
+### Objetivo
+
+Implementar el cierre de sesión.
+
+### Estado
+
+⏳ Pendiente
+
+---
+
+## Iteración 10.5 – Recuperación de contraseña
+
+### Objetivo
+
+Implementar el envío del correo de recuperación de contraseña.
+
+### Estado
+
+⏳ Pendiente
+
+---
+
+## Iteración 10.6 – Restablecimiento de contraseña
+
+### Objetivo
+
+Implementar el cambio de contraseña mediante el flujo de recuperación.
+
+### Estado
+
+⏳ Pendiente
+
+---
+
+## Iteración 10.7 – Middleware de autenticación
+
+### Objetivo
+
+Implementar el middleware encargado de validar JWT y proteger las rutas privadas.
+
+### Estado
+
+⏳ Pendiente
+
+---
+
+## Iteración 10.8 – Cierre del SPEC
+
+### Objetivo
+
+Completar el flujo de autenticación.
+
+### Alcance
+
+- Protección de rutas.
+- Persistencia de sesión.
+- Pruebas finales.
+- Validación funcional.
+- Cierre del SPEC.
+
+### Estado
+
+⏳ Pendiente
+
+
 # Fin del SPEC-010
