@@ -5,4 +5,8 @@ export { createSuccessResponse, createErrorResponse } from '../shared/responses/
 export { errorHandler } from './middlewares/error-handler.js';
 export { healthRoutes } from './modules/health/index.js';
 export { systemName, systemVersion, getSystemMetadata } from './version/version.js';
-export { getSupabaseClient, resetSupabaseClient } from './database/index.js';
+export {
+  createRequestSupabaseClient,
+  getSupabaseClient,
+  resetSupabaseClient,
+} from './database/index.js';

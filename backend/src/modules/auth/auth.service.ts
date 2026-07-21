@@ -19,6 +19,8 @@ export interface AuthLoginData {
 }
 
 export type AuthLoginResponse = ApiResponse<AuthLoginData>;
+export type AuthLogoutResponse = ApiResponse<null>;
+export type AuthRegistrationResponse = ApiResponse<AuthLoginData>;
 
 function getAuthClient() {
   return getSupabaseClient({
@@ -48,4 +50,46 @@ export async function login(credentials: LoginCredentials): Promise<AuthLoginRes
     },
     'Inicio de sesión exitoso',
   );
+}
+
+/**
+ * Registra un usuario mediante Supabase Auth.
+ */
+export async function register(
+  credentials: LoginCredentials,
+): Promise<AuthRegistrationResponse> {
+  const { data, error } = await getAuthClient().auth.signUp(credentials);
+
+  if (error !== null) {
+    if (error.code === 'user_already_exists') {
+      return createErrorResponse('El usuario ya está registrado');
+    }
+
+    throw error;
+  }
+
+  if (data.user?.identities?.length === 0) {
+    return createErrorResponse('El usuario ya está registrado');
+  }
+
+  return createSuccessResponse(
+    {
+      user: data.user,
+      session: data.session,
+    },
+    'Usuario registrado exitosamente',
+  );
+}
+
+/**
+ * Cierra la sesión activa mediante Supabase Auth.
+ */
+export async function logout(): Promise<AuthLogoutResponse> {
+  const { error } = await getAuthClient().auth.signOut();
+
+  if (error !== null) {
+    throw error;
+  }
+
+  return createSuccessResponse(null, 'Sesión cerrada exitosamente');
 }

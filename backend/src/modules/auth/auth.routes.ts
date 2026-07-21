@@ -1,6 +1,10 @@
 import { Router } from 'express';
 
-import { loginController } from './auth.controller.js';
+import {
+  loginController,
+  logoutController,
+  registerController,
+} from './auth.controller.js';
 
 const router = Router();
 
@@ -8,5 +12,7 @@ const router = Router();
  * Rutas del módulo de autenticación.
  */
 router.post('/login', loginController);
+router.post('/logout', logoutController);
+router.post('/register', registerController);
 
 export default router;

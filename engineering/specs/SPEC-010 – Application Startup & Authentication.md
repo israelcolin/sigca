@@ -588,49 +588,230 @@ Si durante la implementación se detecta una limitación del contrato del Core, 
 
 ### Estado
 
-⏳ Pendiente
+✅ Completada
 
-## Iteración 10.4 – Logout
+## Iteración 10.4 – Logout con Supabase Auth
 
 ### Objetivo
 
-Implementar el cierre de sesión.
+Preparar la infraestructura del endpoint de logout manteniendo la arquitectura del módulo Auth.
+
+La invalidación efectiva de la sesión del usuario se implementará una vez exista infraestructura de autenticación por solicitud (Iteración 10.7).
+
+### Alcance
+
+- Implementar la lógica del endpoint existente o registrar el endpoint si aún no existe.
+- Invalidar la sesión mediante Supabase Auth.
+- Mantener la arquitectura Routes → Controller → Service.
+- Utilizar el cliente centralizado del Core.
+- Utilizar las respuestas estándar del proyecto.
+- Delegar errores inesperados al middleware global.
+
+### Entradas
+
+No requiere body.
+
+La autenticación del usuario se basa en la sesión/token recibido.
+
+### Comportamiento esperado
+
+Cuando exista una sesión válida:
+
+- Cerrar la sesión mediante Supabase Auth.
+- Devolver una respuesta estándar indicando que el cierre fue exitoso.
+
+Cuando ocurra un error:
+
+- Utilizar el manejo de errores existente.
+
+### Archivos involucrados
+
+- backend/src/modules/auth/auth.routes.ts
+- backend/src/modules/auth/auth.controller.ts
+- backend/src/modules/auth/auth.service.ts
+
+### Restricciones
+
+No implementar:
+
+- Middleware JWT.
+- Protección de rutas.
+- Refresh Token.
+- Gestión de roles.
+- Revocación personalizada de sesiones.
+
+### Criterios de aceptación
+
+- Existe el endpoint POST /api/v1/auth/logout.
+- Se mantiene la arquitectura Routes → Controller → Service.
+- Se utilizan respuestas estándar.
+- No se introduce infraestructura de autenticación fuera del alcance.
 
 ### Estado
 
-⏳ Pendiente
+✅ (Logout preparado; comportamiento definitivo dependerá de la autenticación por solicitud)
 
 ---
 
-## Iteración 10.5 – Recuperación de contraseña
+## Iteración 10.5 – Registro de usuarios con Supabase Auth
 
 ### Objetivo
 
-Implementar el envío del correo de recuperación de contraseña.
+Implementar el registro de usuarios utilizando Supabase Auth, respetando la arquitectura definida para el módulo Auth.
+
+### Alcance
+
+- Implementar el endpoint POST /api/v1/auth/register.
+- Registrar nuevos usuarios mediante Supabase Auth.
+- Reutilizar el cliente centralizado del Core.
+- Mantener la arquitectura Routes → Controller → Service.
+- Utilizar respuestas estándar del proyecto.
+- Delegar errores inesperados al middleware global.
+
+### Entradas
+
+Request Body
+
+{
+  "email": "usuario@correo.com",
+  "password": "********"
+}
+
+### Comportamiento esperado
+
+Cuando la información sea válida:
+
+- Registrar el usuario mediante Supabase Auth.
+- Devolver respuesta estándar indicando que el registro fue exitoso.
+
+Cuando el correo ya exista:
+
+- Devolver una respuesta estándar indicando que el usuario ya está registrado.
+
+Cuando exista un error inesperado:
+
+- Delegar el manejo al middleware global.
+
+### Archivos involucrados
+
+- backend/src/modules/auth/auth.routes.ts
+- backend/src/modules/auth/auth.controller.ts
+- backend/src/modules/auth/auth.service.ts
+
+### Restricciones
+
+No implementar lógica específica para confirmación de correo electrónico.
+
+Si el proyecto de Supabase tiene habilitada la confirmación de correo, el comportamiento nativo de Supabase se considera parte de la plataforma y no deberá ser modificado ni reemplazado por código de SIGCA.
+
+### Criterios de aceptación
+
+- Existe POST /api/v1/auth/register.
+- El registro utiliza Supabase Auth.
+- Se mantiene la arquitectura del módulo.
+- Se utilizan respuestas estándar.
+- No existen cambios fuera del alcance.
 
 ### Estado
 
-⏳ Pendiente
+✅ (validada tras el ajuste de infraestructura)
+
+### Observaciones
+
+Durante la implementación se detectó que auth.signUp() puede mantener estado de autenticación cuando se utiliza sobre el cliente Singleton del Core.
+
+La corrección de infraestructura se realizará en la Iteración 10.6 para cumplir DEC-021.
 
 ---
 
-## Iteración 10.6 – Restablecimiento de contraseña
+## Iteración 10.6 – Ajuste de infraestructura de autenticación
 
 ### Objetivo
 
-Implementar el cambio de contraseña mediante el flujo de recuperación.
+Alinear la infraestructura del Core con DEC-021 para garantizar que el cliente compartido de Supabase no mantenga estado de autenticación entre solicitudes.
+
+### Justificación
+
+Durante la implementación de las iteraciones 10.4 y 10.5 se identificó que el uso de un SupabaseClient Singleton con la configuración por defecto puede conservar estado de autenticación del usuario.
+
+Este comportamiento contradice DEC-021.
+
+Antes de continuar con nuevas funcionalidades de autenticación es necesario corregir esta infraestructura.
+
+### Alcance
+
+- Revisar la configuración del cliente del Core.
+- Eliminar persistencia de sesión en el cliente compartido.
+- Desactivar mecanismos de autenticación que no correspondan a un backend stateless.
+- Validar compatibilidad con Login, Logout y Registro.
+- No modificar la arquitectura modular.
+
+### Restricciones
+
+No implementar:
+
+- Middleware JWT.
+- Cliente por solicitud.
+- Protección de rutas.
+- Roles.
+- Refresh Token.
+- Nuevas funcionalidades.
+
+### Criterios de aceptación
+
+- El cliente compartido del Core no conserva estado de autenticación.
+- Login continúa funcionando.
+- Registro continúa funcionando.
+- Logout mantiene el comportamiento definido en la Iteración 10.4.
+- DEC-021 queda completamente satisfecha.
+- El cliente compartido del Core se configura explícitamente para no persistir estado de autenticación de usuarios.
 
 ### Estado
 
-⏳ Pendiente
+✅ Completada
 
----
+### Observaciones
+La configuración del cliente compartido elimina la persistencia de sesión y el refresco automático de tokens.
 
-## Iteración 10.7 – Middleware de autenticación
+La asociación entre identidad del usuario y cada solicitud HTTP será implementada en la iteración dedicada a la infraestructura de autenticación por solicitud.
+
+## Iteración 10.7 – Middleware de autenticación por solicitud
 
 ### Objetivo
 
-Implementar el middleware encargado de validar JWT y proteger las rutas privadas.
+Implementar un middleware de autenticación que obtenga la identidad del usuario desde cada solicitud HTTP utilizando Supabase Auth, respetando DEC-021.
+
+### Alcance
+
+- Implementar middleware de autenticación.
+- Extraer el token desde el encabezado Authorization.
+- Validar el usuario mediante Supabase.
+- Asociar el usuario autenticado al contexto de la solicitud.
+- Permitir que los módulos posteriores consuman dicha identidad.
+- No modificar la arquitectura existente.
+
+### Archivos involucrados
+
+- backend/src/middleware/auth.middleware.ts (nuevo)
+- backend/src/app.ts
+- backend/src/core/database/supabase-client.ts (solo si fuera estrictamente necesario)
+- backend/src/types (si es necesario extender Request)
+
+### Restricciones
+
+No implementar:
+
+- Autorización por roles.
+- Permisos.
+- Protección de rutas específicas (Iteración 10.8).
+- Funcionalidades fuera del alcance.
+
+### Criterios de aceptación
+
+- El middleware obtiene el token desde Authorization.
+- La identidad proviene exclusivamente del contexto de la solicitud.
+- No se utiliza el cliente Singleton como representación del usuario autenticado.
+- La arquitectura del proyecto permanece sin cambios.
 
 ### Estado
 
