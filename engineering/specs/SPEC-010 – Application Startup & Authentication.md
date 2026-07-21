@@ -815,27 +815,117 @@ No implementar:
 
 ### Estado
 
-⏳ Pendiente
+✅ Completado
+
+### Observaciones 
+La infraestructura de autenticación por solicitud quedó implementada mediante un middleware que crea un cliente de Supabase asociado al contexto de cada petición.
+
+La aplicación del middleware sobre rutas protegidas se realizará en la Iteración 10.8.
 
 ---
 
-## Iteración 10.8 – Cierre del SPEC
+## Iteración 10.8 – Protección de rutas autenticadas
 
 ### Objetivo
 
-Completar el flujo de autenticación.
+Aplicar el middleware de autenticación implementado en la Iteración 10.7 a las rutas que requieran un usuario autenticado, garantizando que únicamente las solicitudes con una identidad válida puedan acceder a los recursos protegidos.
 
 ### Alcance
 
-- Protección de rutas.
-- Persistencia de sesión.
-- Pruebas finales.
-- Validación funcional.
-- Cierre del SPEC.
+- Integrar el middleware de autenticación en las rutas privadas.
+- Mantener las rutas públicas sin protección.
+- Garantizar que únicamente las solicitudes autenticadas lleguen a los controladores protegidos.
+- Reutilizar el middleware existente sin modificar su comportamiento.
+- Mantener la arquitectura modular del proyecto.
+
+### Archivos involucrados
+
+- backend/src/modules/auth/auth.routes.ts
+- backend/src/app.ts (solo si es necesario registrar middleware global o agrupar rutas)
+- backend/src/middleware/auth.middleware.ts (solo integración, sin cambios funcionales)
+
+### Restricciones
+
+No implementar:
+
+- Autorización basada en roles.
+- Permisos por recurso.
+- Validaciones de negocio.
+- Cambios al middleware desarrollado en la Iteración 10.7.
+- Cambios en el Core o en la infraestructura de Supabase.
+
+### Criterios de aceptación
+
+- Las rutas protegidas utilizan el middleware de autenticación.
+- Las rutas públicas continúan siendo accesibles sin autenticación.
+- Una solicitud sin token recibe respuesta HTTP 401.
+- Una solicitud con token inválido recibe respuesta HTTP 401.
+- Una solicitud autenticada accede correctamente a la ruta protegida.
+- No se modifica la arquitectura existente.
 
 ### Estado
 
 ⏳ Pendiente
 
+### Observaciones
+
+### Observaciones
+
+Durante el alcance de este SPEC se consideran públicas las operaciones de:
+
+- Inicio de sesión.
+- Registro.
+- Recuperación de contraseña.
+
+La operación de cierre de sesión requiere autenticación previa y utiliza el middleware implementado en la Iteración 10.7.
+
+La protección de futuros módulos funcionales (usuarios, grupos, asistencia, etc.) será definida en los SPEC correspondientes.
+
+## Iteración 10.9 – Recuperación de contraseña
+
+### Objetivo
+
+Implementar el flujo de recuperación de contraseña utilizando las capacidades de Supabase Auth, permitiendo que un usuario solicite el restablecimiento de su contraseña mediante correo electrónico.
+
+### Alcance
+
+- Implementar el endpoint para solicitar recuperación de contraseña.
+- Delegar el envío del correo electrónico a Supabase Auth.
+- Utilizar las respuestas estándar del proyecto.
+- Integrar la funcionalidad dentro del módulo Auth existente.
+- Mantener la arquitectura definida para el proyecto.
+
+### Archivos involucrados
+
+- backend/src/modules/auth/auth.routes.ts
+- backend/src/modules/auth/auth.controller.ts
+- backend/src/modules/auth/auth.service.ts
+
+### Restricciones
+
+No implementar:
+
+- Pantallas de recuperación de contraseña (SPEC-011).
+- Cambio de contraseña desde la interfaz de usuario.
+- Personalización de correos electrónicos.
+- Gestión de tokens de recuperación.
+- Funcionalidades fuera del alcance de Supabase Auth.
+
+### Criterios de aceptación
+
+- Existe un endpoint para solicitar recuperación de contraseña.
+- El endpoint delega la operación a Supabase Auth.
+- Se utilizan respuestas estándar del proyecto.
+- Los errores se delegan al middleware global.
+- No se almacena estado relacionado con la recuperación de contraseña.
+- La implementación respeta DEC-021 y la arquitectura definida.
+
+### Estado
+
+⏳ Pendiente
+
+### Observaciones
+
+Esta iteración implementa únicamente la operación backend para solicitar el restablecimiento de contraseña. La experiencia de usuario correspondiente será desarrollada en el SPEC-011.
 
 # Fin del SPEC-010
