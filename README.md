@@ -47,9 +47,16 @@ Implementación del Backend (API REST).
 
 ### Backend
 
-* Node.js
-* TypeScript
-* Express
+ ✅ Health Check
+- ✅ Welcome Endpoint
+- ✅ Authentication
+  - Login
+  - Register
+  - Logout
+  - Forgot Password
+- ✅ Request Authentication Middleware
+- ✅ Protected Routes
+- ✅ Supabase Authentication Integration
 
 ### Base de Datos
 
@@ -112,3 +119,4 @@ El análisis funcional y el modelo conceptual del dominio se encuentran aprobado
 El siguiente hito será el diseño físico de la base de datos y la implementación del esquema inicial en Supabase.
 
 SIGCA prioriza la claridad, la estabilidad y la mantenibilidad por encima de la novedad tecnológica.
+

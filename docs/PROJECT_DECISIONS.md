@@ -139,3 +139,15 @@ Toda decisión nueva deberá:
 4. Referenciarse desde las SPEC que dependan de ella.
 
 Este documento es el punto de entrada para comprender la evolución arquitectónica y funcional de SIGCA.
+
+## SPEC-010 Completed
+
+Authentication infrastructure finished.
+
+Highlights:
+
+- Stateless authentication.
+- Per-request authentication context.
+- Middleware-based authentication.
+- Supabase Auth integration.
+- Compliance with DEC-021.
