@@ -5,6 +5,7 @@ import {
   loginController,
   logoutController,
   registerController,
+  requestPasswordRecoveryController,
 } from './auth.controller.js';
 
 const router = Router();
@@ -15,5 +16,6 @@ const router = Router();
 router.post('/login', loginController);
 router.post('/logout', authMiddleware, logoutController);
 router.post('/register', registerController);
+router.post('/forgot-password', requestPasswordRecoveryController);
 
 export default router;

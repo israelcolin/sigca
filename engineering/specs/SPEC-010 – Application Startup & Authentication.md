@@ -865,21 +865,16 @@ No implementar:
 
 ### Estado
 
-⏳ Pendiente
+✅ Completada
+
 
 ### Observaciones
 
-### Observaciones
+Se integró el middleware de autenticación implementado en la Iteración 10.7 sobre la ruta protegida de cierre de sesión.
 
-Durante el alcance de este SPEC se consideran públicas las operaciones de:
+Las rutas de inicio de sesión, registro y recuperación de contraseña permanecen públicas de acuerdo con el alcance definido para este SPEC.
 
-- Inicio de sesión.
-- Registro.
-- Recuperación de contraseña.
-
-La operación de cierre de sesión requiere autenticación previa y utiliza el middleware implementado en la Iteración 10.7.
-
-La protección de futuros módulos funcionales (usuarios, grupos, asistencia, etc.) será definida en los SPEC correspondientes.
+La protección de rutas pertenecientes a módulos funcionales será implementada en los SPEC correspondientes.
 
 ## Iteración 10.9 – Recuperación de contraseña
 
@@ -922,10 +917,32 @@ No implementar:
 
 ### Estado
 
-⏳ Pendiente
+✅ Completado
 
 ### Observaciones
 
 Esta iteración implementa únicamente la operación backend para solicitar el restablecimiento de contraseña. La experiencia de usuario correspondiente será desarrollada en el SPEC-011.
+
+La URL utilizada por Supabase para el enlace de recuperación será configurada durante la implementación del frontend (SPEC-011) y la configuración del proyecto en Supabase.    
+
+## Resultados del SPEC
+
+Se implementó la infraestructura completa de autenticación del backend utilizando Supabase Auth, incluyendo:
+
+- Inicio de sesión.
+- Registro de usuarios.
+- Cierre de sesión.
+- Recuperación de contraseña.
+- Middleware de autenticación por solicitud.
+- Protección de rutas autenticadas.
+- Configuración stateless del cliente compartido de Supabase.
+- Integración con respuestas estándar del proyecto.
+- Compatibilidad con la arquitectura modular definida para SIGCA.
+
+Todas las iteraciones fueron aprobadas mediante el flujo:
+
+CONTEXT_REVIEW → IMPLEMENT_SPEC → CODE_REVIEW
+
+La implementación cumple con DEC-021 y ADR-001.
 
 # Fin del SPEC-010

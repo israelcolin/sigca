@@ -21,6 +21,11 @@ export interface AuthLoginData {
 export type AuthLoginResponse = ApiResponse<AuthLoginData>;
 export type AuthLogoutResponse = ApiResponse<null>;
 export type AuthRegistrationResponse = ApiResponse<AuthLoginData>;
+export type PasswordRecoveryResponse = ApiResponse<null>;
+
+export interface PasswordRecoveryRequest {
+  email: string;
+}
 
 function getAuthClient() {
   return getSupabaseClient({
@@ -79,6 +84,21 @@ export async function register(
     },
     'Usuario registrado exitosamente',
   );
+}
+
+/**
+ * Solicita a Supabase el envío del correo de recuperación de contraseña.
+ */
+export async function requestPasswordRecovery(
+  request: PasswordRecoveryRequest,
+): Promise<PasswordRecoveryResponse> {
+  const { error } = await getAuthClient().auth.resetPasswordForEmail(request.email);
+
+  if (error !== null) {
+    throw error;
+  }
+
+  return createSuccessResponse(null, 'Solicitud de recuperación enviada');
 }
 
 /**
