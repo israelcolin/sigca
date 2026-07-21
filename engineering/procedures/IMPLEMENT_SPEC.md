@@ -6,6 +6,11 @@ Este documento define el procedimiento estándar para implementar cualquier SPEC
 
 Todas las implementaciones deberán seguir estas instrucciones.
 
+## Entradas
+
+- SPEC
+- Iteración
+
 ## Fuentes de Verdad
 
 Antes de implementar cualquier entregable, se deberá revisar la documentación relacionada.
@@ -95,37 +100,37 @@ Reglas:
 - Evitar lógica innecesaria.
 - No utilizar valores "hardcodeados" cuando puedan centralizarse.
 
+## Alcance
+
+Implementar únicamente lo definido por la iteración.
+
+No ampliar funcionalidades.
+
+No anticipar trabajo de iteraciones futuras.
+
 ---
 
-# Al finalizar
+## Restricciones
 
-Generar un resumen indicando:
+- Respetar DEC.
+- Respetar ADR.
+- Respetar SPEC.
+- No modificar arquitectura.
+- No introducir deuda técnica.
+- No refactorizar módulos ajenos.
 
-## Archivos creados
+---
 
--
+## Resultado esperado
 
-## Archivos modificados
+Una implementación funcional que cumpla exactamente los criterios de aceptación de la iteración.
 
--
+---
 
-## Decisiones tomadas
+## Al finalizar
 
--
+Entregar únicamente:
 
-## Posibles mejoras detectadas
-
-(No implementarlas)
-
--
-
-## Riesgos identificados
-
--
-
-## Estado
-
-- Implementación completada.
-- Pendiente de revisión técnica.
-
-Esperar autorización antes de continuar con otra SPEC.
+- archivos modificados;
+- breve explicación;
+- riesgos detectados.

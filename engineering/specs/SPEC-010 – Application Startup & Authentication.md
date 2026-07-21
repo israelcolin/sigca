@@ -479,28 +479,116 @@ backend/src/modules/auth/
 
 ### Estado
 
-⏳ Pendiente
+✅ Completada
 
 ---
 
-## Iteración 10.3 – Login
+## Iteración 10.3 – Login con Supabase Auth
 
 ### Objetivo
 
-Implementar el inicio de sesión utilizando Supabase Auth.
+Implementar la lógica de autenticación del endpoint `POST /api/v1/auth/login` utilizando Supabase Auth.
+
+El endpoint ya fue registrado durante la Iteración 10.2. Esta iteración implementa únicamente su comportamiento funcional.
 
 ### Alcance
 
-- Validación de credenciales.
-- Integración con Supabase Auth.
-- Manejo de errores.
-- Respuesta estándar.
+- Implementar la autenticación mediante correo electrónico y contraseña.
+- Utilizar el cliente centralizado de Supabase proporcionado por el Core.
+- Integrar la lógica dentro de `auth.service.ts`.
+- Mantener el patrón Routes → Controller → Service.
+- Utilizar las respuestas estándar del proyecto.
+- Manejar errores de autenticación.
+
+### Ajustes técnicos permitidos
+
+Durante esta iteración podrán realizarse ajustes limitados al contrato público del Core cuando sean estrictamente necesarios para permitir la implementación del login.
+
+Estos ajustes deberán cumplir las siguientes reglas:
+
+- No modificar la arquitectura del proyecto.
+- No alterar el comportamiento funcional existente.
+- No introducir nuevas responsabilidades en el Core.
+- No crear deuda técnica temporal.
+- Mantener compatibilidad con el resto del sistema.
+
+Su único propósito será asegurar que el contrato público del Core represente correctamente las capacidades que ya ofrece el cliente oficial de Supabase y que son requeridas por el módulo de autenticación.
+
+### Entradas
+
+Request JSON:
+
+```json
+{
+  "email": "usuario@correo.com",
+  "password": "********"
+}
+```
+
+### Comportamiento esperado
+
+Cuando las credenciales sean válidas:
+
+- Autenticar al usuario mediante Supabase Auth.
+- Obtener la sesión generada por Supabase.
+- Devolver la información utilizando el formato estándar de respuestas del proyecto.
+
+Cuando las credenciales sean inválidas:
+
+- Devolver una respuesta de autenticación fallida utilizando la infraestructura compartida del proyecto.
+
+Cuando ocurra un error inesperado:
+
+- Delegar el manejo al mecanismo global de errores existente.
+
+### Archivos involucrados
+
+- `backend/src/modules/auth/auth.controller.ts`
+- `backend/src/modules/auth/auth.service.ts`
+
+No deberán modificarse otros módulos salvo que sea estrictamente necesario para integrar la funcionalidad.
+
+### Restricciones
+
+No implementar:
+
+- Logout.
+- Refresh Token.
+- Middleware JWT.
+- Protección de rutas.
+- Recuperación de contraseña.
+- Gestión de roles y permisos.
+- No utilizar aserciones de tipo (`as`, `unknown as` o equivalentes) para acceder a capacidades que deban formar parte del contrato público del Core.
+
+No modificar:
+
+- Arquitectura.
+- Core.
+- Configuración.
+- Middleware global.
+- Contrato público del endpoint.
+
+### Criterios de aceptación
+
+- El endpoint registrado en la Iteración 10.2 autentica correctamente utilizando Supabase Auth.
+- Se reutiliza el cliente centralizado de Supabase.
+- El Controller continúa sin contener lógica de negocio.
+- El Service concentra toda la lógica de autenticación.
+- Se utilizan las respuestas estándar del proyecto.
+- Se manejan correctamente los errores de autenticación.
+- No existen cambios fuera del alcance de la Iteración 10.3.
+
+### Prerrequisitos técnicos
+
+Antes de implementar la autenticación, el contrato público del cliente de Supabase deberá exponer las capacidades requeridas por el módulo Auth.
+
+No deberán utilizarse aserciones de tipo para acceder a funcionalidades del cliente que formen parte del contrato oficial del Core.
+
+Si durante la implementación se detecta una limitación del contrato del Core, ésta deberá corregirse como parte de la misma iteración antes de implementar la lógica de autenticación.
 
 ### Estado
 
 ⏳ Pendiente
-
----
 
 ## Iteración 10.4 – Logout
 
