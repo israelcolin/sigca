@@ -1,0 +1,49 @@
+.dashboard-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sigca-spacing-lg) var(--sigca-spacing-md);
+}
+
+.dashboard-page__card {
+  width: 100%;
+  max-width: var(--sigca-dimensions-login-card-max-width);
+  margin: 0;
+  border-radius: var(--sigca-radii-card);
+}
+
+.dashboard-page__brand {
+  margin: 0 0 var(--sigca-spacing-md);
+  color: var(--sigca-colors-primary);
+  font-size: var(--sigca-typography-brand-title-size);
+  font-weight: var(--sigca-typography-title-weight);
+}
+
+.dashboard-page h1 {
+  margin: 0 0 var(--sigca-spacing-lg);
+  color: var(--sigca-colors-text-primary);
+  font-size: var(--sigca-typography-card-title-size);
+  font-weight: var(--sigca-typography-title-weight);
+}
+
+.dashboard-page__welcome,
+.dashboard-page__role {
+  margin: var(--sigca-spacing-sm) 0;
+  color: var(--sigca-colors-text-secondary);
+}
+
+.dashboard-page__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dashboard-page__logout {
+  background-color: var(--sigca-colors-primary);
+  font-weight: var(--sigca-typography-button-weight);
+}
+
+.dashboard-page__logout:hover,
+.dashboard-page__logout:focus {
+  background-color: var(--sigca-colors-primary-dark);
+}

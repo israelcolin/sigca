@@ -112,3 +112,47 @@ El proyecto queda listo para iniciar el diseño físico de la base de datos y el
 - Row Level Security
 - Congelamiento de la arquitectura base
 - Inicio de SPEC-008
+
+## [SPEC-010] - Authentication Backend Completed 2026-07-20
+
+### Added
+
+- Login endpoint.
+- User registration endpoint.
+- Logout endpoint.
+- Password recovery endpoint.
+- Request authentication middleware.
+- Route protection for authenticated endpoints.
+- Stateless Supabase client configuration.
+- Standard API responses for authentication flows.
+
+### Changed
+
+- Authentication architecture aligned with DEC-021.
+- Authentication middleware integrated into protected routes.
+
+### Fixed
+
+- Removed shared authentication state from the Core.
+- Authentication now derives exclusively from the HTTP request context.
+
+# 2026-07-22
+
+## SPEC-011
+
+### Autenticación completa
+
+Se concluyó el flujo completo de autenticación.
+
+Incluye:
+
+- Login real.
+- Persistencia del JWT.
+- Restauración automática.
+- Endpoint GET /auth/session.
+- ProtectedRoute.
+- PublicRoute.
+- Dashboard Base.
+- Logout.
+- Limpieza automática ante 401.
+- Protección contra navegación por historial.

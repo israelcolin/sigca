@@ -1,0 +1,17 @@
+.auth-loading {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sigca-spacing-md);
+  color: var(--sigca-colors-text-secondary);
+}
+
+.auth-loading__label {
+  font-weight: var(--sigca-typography-text-weight);
+}
+
+.auth-loading__spinner {
+  border-color: var(--sigca-colors-primary);
+}

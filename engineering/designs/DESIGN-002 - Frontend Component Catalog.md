@@ -1946,6 +1946,93 @@ Un componente será considerado oficial cuando:
 
 ---
 
+# 86. Roadmap de Implementación
+
+La implementación de la biblioteca de componentes se realizará de forma incremental.
+
+## Fase 1 – Infraestructura Base
+
+| Componente | Estado |
+|------------|:------:|
+| PublicLayout | ✅ |
+| PageContainer | ✅ |
+| LoginForm | ✅ |
+| ParishLogo | ✅ |
+| VersionLabel | ✅ |
+
+---
+
+## Fase 2 – Foundation
+
+| Componente | Estado |
+|------------|:------:|
+| AppButton | ⏳ |
+| AppIcon | ⏳ |
+| AppIconButton | ⏳ |
+| AppText | ⏳ |
+| AppLink | ⏳ |
+| AppDivider | ⏳ |
+| AppBadge | ⏳ |
+| AppChip | ⏳ |
+| AppAvatar | ⏳ |
+| AppLogo | ⏳ |
+
+---
+
+## Fase 3 – Formularios
+
+| Componente | Estado |
+|------------|:------:|
+| AppInput | ⏳ |
+| AppPasswordInput | ⏳ |
+| AppTextarea | ⏳ |
+| AppSelect | ⏳ |
+| AppCheckbox | ⏳ |
+| AppRadioGroup | ⏳ |
+| AppSwitch | ⏳ |
+| AppDatePicker | ⏳ |
+
+---
+
+## Fase 4 – Navegación
+
+| Componente | Estado |
+|------------|:------:|
+| Breadcrumb | ⏳ |
+| Toolbar | ⏳ |
+| PageHeader | ⏳ |
+| Sidebar | ⏳ |
+| Header | ⏳ |
+| Footer | ⏳ |
+
+---
+
+## Fase 5 – Visualización
+
+| Componente | Estado |
+|------------|:------:|
+| AppCard | ⏳ |
+| AppTable | ⏳ |
+| AppStatisticCard | ⏳ |
+| AppAccordion | ⏳ |
+| AppTabs | ⏳ |
+| AppPagination | ⏳ |
+
+---
+
+## Fase 6 – Feedback
+
+| Componente | Estado |
+|------------|:------:|
+| AppDialog | ⏳ |
+| AppConfirmDialog | ⏳ |
+| AppSnackbar | ⏳ |
+| AppSpinner | ⏳ |
+| AppSkeleton | ⏳ |
+| AppLoadingOverlay | ⏳ |
+| AppEmptyState | ⏳ |
+| AppErrorState | ⏳ |
+
 # Fin del Documento
 
 Con la aprobación de DESIGN-002 queda establecida la biblioteca oficial de componentes reutilizables del frontend de SIGCA.

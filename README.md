@@ -120,3 +120,18 @@ El siguiente hito será el diseño físico de la base de datos y la implementaci
 
 SIGCA prioriza la claridad, la estabilidad y la mantenibilidad por encima de la novedad tecnológica.
 
+## Estado actual
+
+Backend
+
+✅ API
+✅ Login
+✅ Restauración
+✅ Logout
+
+Frontend
+
+✅ Login
+✅ Dashboard Base
+✅ Rutas protegidas
+✅ Restauración

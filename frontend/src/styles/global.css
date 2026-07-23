@@ -1,0 +1,22 @@
+@import '../routes/styles/auth-loading.css';
+
+:root {
+  font-family: Roboto, Arial, sans-serif;
+  color: var(--sigca-colors-text-primary);
+  background-color: var(--sigca-colors-background);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background-color: var(--sigca-colors-background);
+}
+
+button,
+input {
+  font: inherit;
+}

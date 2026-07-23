@@ -73,3 +73,11 @@ La hoja de ruta expresa resultados, no fechas contractuales. Las prioridades se 
 ## Condiciones transversales
 
 Cada fase debe preservar aislamiento de datos, accesibilidad, trazabilidad, documentación y pruebas. Ninguna capacidad futura justifica adelantar complejidad sin una necesidad validada.
+
+## SPEC-011
+
+- [x] 11.2.3 Login
+- [x] 11.2.4 Restauración
+- [x] 11.2.5 Protección de rutas
+- [x] 11.2.6 Dashboard Base (consolidada)
+- [ ] 11.3 Layout principal

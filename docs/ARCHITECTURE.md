@@ -108,3 +108,28 @@ La defensa será en profundidad:
 ## Evolución
 
 Separar servicios o introducir colas, cachés y procesamiento asíncrono requerirá evidencia de carga, disponibilidad o independencia de despliegue. Toda decisión estructural significativa se registrará mediante un ADR.
+
+
+Login
+    │
+    ▼
+AuthContext
+    │
+    ▼
+AuthProvider
+    │
+    ▼
+ProtectedRoute
+    │
+    ▼
+Dashboard
+
+401
+ ↓
+Interceptor
+ ↓
+AuthContext
+ ↓
+ProtectedRoute
+ ↓
+Login

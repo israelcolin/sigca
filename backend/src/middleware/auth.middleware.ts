@@ -4,6 +4,7 @@ import type { User } from '@supabase/supabase-js';
 import { env } from '../core/config/env.js';
 import {
   createRequestSupabaseClient,
+  getSupabaseClient,
   type DatabaseClient,
 } from '../core/database/index.js';
 import { createErrorResponse } from '../shared/responses/api-response.js';
@@ -47,12 +48,11 @@ export async function authMiddleware(
       return;
     }
 
-    const supabase = createRequestSupabaseClient({
+    const authClient = getSupabaseClient({
       url: env.supabase.url,
       anonKey: env.supabase.anonKey,
-      accessToken,
     });
-    const { data, error } = await supabase.auth.getUser(accessToken);
+    const { data, error } = await authClient.auth.getUser(accessToken);
 
     if (error !== null) {
       if (error.status === 401 || error.status === 403) {
@@ -68,6 +68,12 @@ export async function authMiddleware(
       res.status(401).json(createErrorResponse('No autorizado'));
       return;
     }
+
+    const supabase = createRequestSupabaseClient({
+      url: env.supabase.url,
+      anonKey: env.supabase.anonKey,
+      accessToken,
+    });
 
     req.auth = {
       user: data.user,

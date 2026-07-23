@@ -1,5 +1,7 @@
 import express from 'express';
+import cors from 'cors';
 
+import { config } from './core/config/config.js';
 import { errorHandler } from './core/middlewares/error-handler.js';
 import { authRoutes } from './modules/auth/index.js';
 import { healthRoutes } from './modules/health/index.js';
@@ -12,6 +14,21 @@ import { welcomeRoutes } from './modules/welcome/index.js';
  * transversales del Core del sistema.
  */
 const app = express();
+const corsOrigin = config.corsOrigin;
+
+if (!corsOrigin) {
+  throw new Error('CORS_ORIGIN debe estar definida.');
+}
+
+app.use(
+  cors({
+    origin: config.corsOrigin,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }),
+);
+
 
 // Evita publicar un detalle innecesario sobre la tecnología del servidor.
 app.disable('x-powered-by');
