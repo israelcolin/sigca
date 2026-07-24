@@ -4,6 +4,7 @@ export interface AuthenticatedUser {
   nombre: string;
   correo?: string;
   rol: string;
+  photoUrl?: string | null;
 }
 
 /** Convierte el contrato normalizado de Auth al estado interno del Frontend. */

@@ -1,57 +1,22 @@
-import { useRef, useState } from 'react';
-
 import { useAuth } from '../../auth/index.js';
 import './styles/dashboard.css';
 
-/** Pantalla temporal que confirma el acceso a una ruta privada. */
+/** Contenido inicial del Dashboard dentro del layout principal. */
 export function DashboardPage() {
-  const { authenticatedUser, logout } = useAuth();
-  const [isLoggingOut, setIsLoggingOut] = useState(false);
-  const isLoggingOutRef = useRef(false);
-
-  const handleLogout = async () => {
-    if (isLoggingOutRef.current) {
-      return;
-    }
-
-    isLoggingOutRef.current = true;
-    setIsLoggingOut(true);
-
-    try {
-      await logout();
-    } catch {
-      // La limpieza local se ejecuta en AuthProvider incluso si falla la API.
-    } finally {
-      isLoggingOutRef.current = false;
-      setIsLoggingOut(false);
-    }
-  };
+  const { authenticatedUser } = useAuth();
+  const userName = authenticatedUser?.nombre ?? 'Usuario';
+  const userRole = authenticatedUser?.rol || 'Sin rol asignado';
 
   return (
-    <main className="dashboard-page">
+    <section className="dashboard-page" aria-labelledby="dashboard-title">
       <article className="card z-depth-2 dashboard-page__card">
         <div className="card-content">
           <p className="dashboard-page__brand">SIGCA</p>
-          <h1>Dashboard</h1>
-          <p className="dashboard-page__welcome">
-            Bienvenido, {authenticatedUser?.nombre ?? ''}
-          </p>
-          <p className="dashboard-page__role">Rol: {authenticatedUser?.rol ?? ''}</p>
-        </div>
-        <div className="card-action dashboard-page__actions">
-          <button
-            className="btn waves-effect waves-light dashboard-page__logout"
-            type="button"
-            disabled={isLoggingOut}
-            onClick={() => void handleLogout()}
-          >
-            {isLoggingOut ? 'Cerrando sesión…' : 'Cerrar sesión'}
-            <i className="material-icons right" aria-hidden="true">
-              logout
-            </i>
-          </button>
+          <h1 id="dashboard-title">Dashboard</h1>
+          <p className="dashboard-page__welcome">Bienvenido, {userName}</p>
+          <p className="dashboard-page__role">Rol activo: {userRole}</p>
         </div>
       </article>
-    </main>
+    </section>
   );
 }

@@ -1,9 +1,5 @@
 .dashboard-page {
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: var(--sigca-spacing-lg) var(--sigca-spacing-md);
+  width: 100%;
 }
 
 .dashboard-page__card {
@@ -31,19 +27,4 @@
 .dashboard-page__role {
   margin: var(--sigca-spacing-sm) 0;
   color: var(--sigca-colors-text-secondary);
-}
-
-.dashboard-page__actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.dashboard-page__logout {
-  background-color: var(--sigca-colors-primary);
-  font-weight: var(--sigca-typography-button-weight);
-}
-
-.dashboard-page__logout:hover,
-.dashboard-page__logout:focus {
-  background-color: var(--sigca-colors-primary-dark);
 }

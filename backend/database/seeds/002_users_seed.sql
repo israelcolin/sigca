@@ -1,4 +1,5 @@
 UUID - Created at Supbase->Authentication->Users->User ID
+--0bec939e-34e3-407e-a545-03e946cc1b66
 
 insert into public.usuario (
   id,
@@ -7,7 +8,7 @@ insert into public.usuario (
   updated_at
 )
 values (
-  '0f9bd3cd-15ea-4b17-a559-dffe5aafdbd1',
+  '0bec939e-34e3-407e-a545-03e946cc1b66',
   true,
   '2026-07-22',
   '2026-07-22'
@@ -24,10 +25,10 @@ INSERT INTO public.perfil(
    updated_at
    )
    VALUES(
-    '0f9bd3cd-15ea-4b17-a559-dffe5aafdbd1',
-    'Israel',
-    'Sánchez',
-    'Colín',
+    '0bec939e-34e3-407e-a545-03e946cc1b66',
+    'Admin',
+    'Forofos',
+    'ST,
     '7223509608',
     '1981-02-13',
     '2026-07-22',
@@ -48,7 +49,7 @@ INSERT INTO public.usuario_rol(
   updated_at
 )
 VALUES (
-  '0f9bd3cd-15ea-4b17-a559-dffe5aafdbd1',
+  '0bec939e-34e3-407e-a545-03e946cc1b66',
   '5ee4f204-0c30-4cfc-bb8b-8a2adcfc50a6',
   '20256-07-22',
   '2026-07-22'

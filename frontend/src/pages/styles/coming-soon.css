@@ -1,0 +1,30 @@
+.coming-soon-page {
+  width: 100%;
+}
+
+.coming-soon-page__card {
+  max-width: var(--sigca-dimensions-login-card-max-width);
+  margin: 0;
+  border-radius: var(--sigca-radii-card);
+}
+
+.coming-soon-page h1,
+.coming-soon-page h2 {
+  color: var(--sigca-colors-text-primary);
+  font-weight: var(--sigca-typography-title-weight);
+}
+
+.coming-soon-page h1 {
+  margin: 0 0 var(--sigca-spacing-lg);
+  font-size: var(--sigca-typography-card-title-size);
+}
+
+.coming-soon-page h2 {
+  margin: 0 0 var(--sigca-spacing-md);
+  font-size: var(--sigca-typography-system-title-size);
+}
+
+.coming-soon-page p {
+  margin: 0;
+  color: var(--sigca-colors-text-secondary);
+}

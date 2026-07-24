@@ -389,3 +389,54 @@ Entregables
 Resultado
 
 Base de datos lista para iniciar el desarrollo del Backend.
+
+# Estado del Proyecto
+
+## Infraestructura
+
+| SPEC | Descripción | Estado |
+|------|-------------|:------:|
+| SPEC-011.1 | Infraestructura Frontend | ✅ |
+| SPEC-011.2 | Autenticación | ✅ |
+| SPEC-011.3 | Layout Principal | ✅ |
+| SPEC-011.4 | Navegación Base | ⏳ Pendiente |
+
+---
+
+## Próxima iteración
+
+### SPEC-011.4
+
+Objetivo:
+
+Implementar la estructura base de navegación de la aplicación, preparando los módulos funcionales sin incorporar todavía lógica de negocio.
+
+Incluye:
+
+- consolidación de rutas;
+- navegación entre módulos;
+- placeholders funcionales;
+- estructura común para futuros CRUD;
+- preparación para control de permisos por rol.
+
+No incluye:
+
+- CRUD de usuarios;
+- CRUD de alumnos;
+- CRUD de catequistas;
+- reportes;
+- estadísticas.
+
+---
+
+## Estado general
+
+Autenticación: ✅
+
+Layout institucional: ✅
+
+Infraestructura visual: ✅
+
+Arquitectura base: ✅
+
+Módulos funcionales: ⏳ Pendientes

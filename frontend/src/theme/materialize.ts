@@ -27,6 +27,8 @@ export const materializeTheme = {
     textSecondary: '#607D8B',
     divider: '#CFD8DC',
     danger: '#D32F2F',
+    overlay: 'rgb(38 50 56 / 40%)',
+    elevation: 'rgb(38 50 56 / 24%)',
   },
   spacing: {
     xs: '4px',
@@ -55,6 +57,11 @@ export const materializeTheme = {
   dimensions: {
     inputHeight: '48px',
     loginCardMaxWidth: '420px',
+    topBarHeight: '64px',
+    sideNavWidth: '272px',
+    avatarSmall: '40px',
+    avatarMedium: '48px',
+    avatarLarge: '64px',
   },
 } as const;
 

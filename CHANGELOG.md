@@ -156,3 +156,38 @@ Incluye:
 - Logout.
 - Limpieza automática ante 401.
 - Protección contra navegación por historial.
+
+# v0.3.0
+
+## Added
+
+- Nuevo AppLayout reutilizable.
+- TopBar institucional.
+- SideNav responsivo.
+- Footer institucional.
+- UserAvatar reutilizable.
+- Página temporal ComingSoonPage.
+- Configuración centralizada de navegación.
+- Configuración centralizada de enlaces externos.
+- Soporte para `photoUrl` opcional en AuthenticatedUser.
+
+## Changed
+
+- Dashboard adaptado para funcionar dentro de AppLayout.
+- Las rutas privadas ahora utilizan una única estructura visual.
+- El logout se integra desde TopBar reutilizando AuthContext.
+- Se consolida la arquitectura base para módulos futuros.
+
+## Fixed
+
+- Corrección del comportamiento responsivo del menú lateral.
+- Corrección del fondo del SideNav en dispositivos móviles.
+- Corrección del fallback del avatar para imágenes inexistentes o inválidas.
+
+## Validation
+
+- Build exitoso.
+- Validaciones visuales completadas.
+- Validación responsive.
+- Restauración de sesión verificada.
+- Logout verificado.

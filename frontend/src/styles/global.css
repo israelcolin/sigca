@@ -1,4 +1,6 @@
 @import '../routes/styles/auth-loading.css';
+@import '../layouts/styles/app-layout.css';
+@import '../pages/styles/coming-soon.css';
 
 :root {
   font-family: Roboto, Arial, sans-serif;

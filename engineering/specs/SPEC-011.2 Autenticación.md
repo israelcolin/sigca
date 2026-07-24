@@ -1,3 +1,13 @@
+
+## Estado de implementación
+
+| Iteración | Estado | Observaciones |
+|-----------|--------|---------------|
+| 11.2.3 | ✅ Completada | Login funcional con autenticación real. |
+| 11.2.4 | ✅ Completada | Persistencia y restauración mediante JWT y GET /auth/session. |
+| 11.2.5 | ✅ Completada | ProtectedRoute, PublicRoute y navegación autenticada. |
+| 11.2.6 | ✅ Consolidada | Dashboard Base y Logout implementados durante 11.2.5. |
+
 # 11.2.1 Infraestructura de Autenticación
 
 ## Objetivo
@@ -1548,7 +1558,7 @@ Los archivos concretos podrán variar según la estructura real existente, pero 
 
 ## Estado
 
-**Pendiente**
+✅ Completado
 
 ---
 
@@ -2111,7 +2121,7 @@ auth/
 
 ## Estado
 
-**Pendiente**
+✅ Completado
 
 ---
 
@@ -2758,7 +2768,7 @@ No deberán duplicarse componentes o servicios existentes.
 
 ## Estado
 
-**Pendiente**
+✅ Completada por consolidación durante la implementación de la SPEC-011.2.5.
 
 ---
 
